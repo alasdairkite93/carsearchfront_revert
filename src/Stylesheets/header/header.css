@@ -20,6 +20,11 @@
     grid-row: 1/3;
 }
 
+.threeheadertext {
+    grid-column: 3/3;
+    grid-row: 1/3;
+}
+
 
 #headertext {
     text-align: left;
@@ -27,6 +32,7 @@
     display: inline-block;
     float: left;
 }
+
 
 #headertitle {
     text-align: center;

@@ -38,10 +38,8 @@ class PCNInput extends React.Component {
 
             //Add error handling for whether the data was returned correctly
 
-            let resp_data = JSON.stringify(data);
-
             this.setState({
-                flask_response: resp_data,
+                flask_response: data,
                 reg_num: reg_number,
                 pcn_num: pcn_number,
                 details_submitted: true
@@ -93,9 +91,12 @@ class PCNInput extends React.Component {
                 <div className="middle-element">
                     <div className="two">
                         <p>Form Submitted</p>
-                        <p>{this.state.pcn_num}</p>
-                        <p>{this.state.reg_num}</p>
-                        <p>{this.state.flask_response}</p>
+                        <p>Registration: {this.state.flask_response.registration}</p>
+                        <p>Date: {this.state.flask_response.date}</p>
+                        <p>Time: {this.state.flask_response.time}</p>
+                        <p>Make: {this.state.flask_response.make}</p>
+                        <p>Color: {this.state.flask_response.color}</p>
+
                     </div>
                 </div>
             )
