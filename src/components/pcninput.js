@@ -1,7 +1,7 @@
-import React, { Component, useState } from 'react';
+import React from 'react';
 import axios from "axios";
 import '../Stylesheets/header/header.css';
-
+import { Link } from 'react-router-dom';
 import '../Stylesheets/layout/centre.css';
 import '../Stylesheets/centre/centrestyles.css';
 
@@ -90,13 +90,12 @@ class PCNInput extends React.Component {
             return (
                 <div className="middle-element">
                     <div className="two">
-                        <p>Form Submitted</p>
                         <p>Registration: {this.state.flask_response.registration}</p>
                         <p>Date: {this.state.flask_response.date}</p>
                         <p>Time: {this.state.flask_response.time}</p>
                         <p>Make: {this.state.flask_response.make}</p>
                         <p>Color: {this.state.flask_response.color}</p>
-
+                        <Link to={"/vehicleinformation"} state={this.state.flask_response}>Vehicle Information</Link>
                     </div>
                 </div>
             )

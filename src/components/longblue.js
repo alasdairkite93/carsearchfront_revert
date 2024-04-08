@@ -3,6 +3,7 @@ import '../Stylesheets/header/header.css';
 
 import '../Stylesheets/layout/centre.css';
 import '../Stylesheets/centre/centrestyles.css';
+
 export default function LongBlueLine() {
     return (
         <div className="container">

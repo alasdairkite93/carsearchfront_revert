@@ -14,6 +14,10 @@
        grid-template-columns: 100px auto 100px;
 }
 
+.twovehicledetails {
+       grid-row: 1/3;
+}
+
 .two {
        grid-column: 2/3;
        grid-row: 1/3;
