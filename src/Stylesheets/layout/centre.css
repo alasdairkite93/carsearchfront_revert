@@ -11,7 +11,7 @@
 
 .middle-element {
        display: grid;
-       grid-template-columns: 100px auto 100px;
+       grid-template-columns: 150px auto 150px;
 }
 
 .twovehicledetails {
