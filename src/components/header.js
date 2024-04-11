@@ -10,14 +10,10 @@ export default function Header() {
 
         return (
         <div className="top-element">
+            <div className="middle-element">
             <div className="two">
-                <div className="textgrid">
-                    <div className="oneheadertext">
                         <h1 id="headertext">PCN.UK</h1>
-                    </div>
-                    <div className="twoheadertext">
-                        <h1 id="headertitle">Get a PCN reminder</h1>
-                    </div>
+                        <h2 id="headertitle">Get a PCN reminder</h2>
                     {/*<div className="threeheadertext">*/}
                     {/*    <h1 id="notgovsite">This is not a GOV.UK site</h1>*/}
                     {/*</div>*/}

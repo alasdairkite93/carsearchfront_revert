@@ -11,7 +11,7 @@ import BlueLine from "./components/blueline";
 import BackButton from "./components/backbutton";
 import PCNInput from "./components/pcninput";
 import LongBlueLine from "./components/longblue";
-
+import Footer from "../src/components/footer";
 
 function App() {
 
@@ -19,7 +19,7 @@ function App() {
   const [profileData, setProfileData] = useState(null)
 
   function getData() {
-    axios.get('https://emailback2.onrender.com/profile')
+    axios.get('http://127.0.0.1:5000/')
         .then((response) => {
           const res =response.data
           setProfileData(({
@@ -41,6 +41,7 @@ function App() {
             <BackButton/>
             <PCNInput/>
           <LongBlueLine/>
+          <Footer />
       </div>
   );
 }

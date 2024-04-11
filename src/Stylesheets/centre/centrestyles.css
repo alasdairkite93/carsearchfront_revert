@@ -4,17 +4,22 @@
     background-color: dodgerblue;
 }
 
+#greycol {
+    color: #808080;
 
-@media only screen and (min-width: 800px) {
+}
+
+
+@media only screen and (min-width: 1200px) {
     /*uses the middle grid*/
     .vehiclegrid {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: 0.5fr 0.5fr 0.5fr 2fr 1fr;
         grid-column: 2/3;
     }
 }
 
-@media only screen and (max-width: 799px) {
+@media only screen and (max-width: 1199px) {
     /*uses the middle grid*/
     .vehiclegrid {
         grid-column: 2/3;
@@ -92,11 +97,14 @@
     border-style: solid;
     border-color: black;
     border-width: thin;
+    font-size: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
 .vehiclegridtwo {
     grid-column: 2/2;
-    background-color: blue;
+    max-height: 400px;
     margin-bottom: 20px;
     margin-top: 20px;
     margin-left: 20px;

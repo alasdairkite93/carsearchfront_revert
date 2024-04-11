@@ -6,7 +6,13 @@ import reportWebVitals from './reportWebVitals';
 import VehicleInformation from './pages/VehicleInformation';
 import Payment from "../src/pages/Payment";
 import Challenge from "../src/pages/Challenge";
+import VehicleReminder from "../src/pages/reminder";
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
+import EmailInput from "./components/formfiles/emailinput";
+import TextInput from "./components/formfiles/textinput";
+import SummaryPage from "../src/pages/summarypage";
+import Activation from "./components/formfiles/activation";
+import SignUp from "./components/formfiles/signup";
 
 const router = createBrowserRouter([
     {
@@ -24,6 +30,30 @@ const router = createBrowserRouter([
     {
         path: "/challenge",
         element: < Challenge />
+    },
+    {
+        path: "/reminder",
+        element: < VehicleReminder />
+    },
+    {
+        path: "/email",
+        element: < EmailInput />
+    },
+    {
+        path: "/text",
+        element: < TextInput />
+    },
+    {
+        path: "/summary",
+        element: < SummaryPage />
+    },
+    {
+        path: "/activation",
+        element: < Activation />
+    },
+    {
+        path: "/signup",
+        element: < SignUp />
     }
 ]);
 

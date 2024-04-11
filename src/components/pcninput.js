@@ -4,8 +4,8 @@ import '../Stylesheets/header/header.css';
 import { Link } from 'react-router-dom';
 import '../Stylesheets/layout/centre.css';
 import '../Stylesheets/centre/centrestyles.css';
-
-
+import '../Stylesheets/forms.css';
+import '../Stylesheets/infopage.css'
 class PCNInput extends React.Component {
 
         constructor(props) {
@@ -27,7 +27,7 @@ class PCNInput extends React.Component {
             let reg_number = e.target.regnum.value;
             let pcn_number = e.target.pcnnum.value;
 
-            const {data} = await axios.post('https://emailback2.onrender.com/postrequest', {
+            const {data} = await axios.post('http://127.0.0.1:5000/postrequest', {
                 reg_number,
                 pcn_number
             }, {
@@ -35,6 +35,8 @@ class PCNInput extends React.Component {
                     'Content-Type':'multipart/form-data'
                 }
             })
+
+            console.log(data);
 
             //Add error handling for whether the data was returned correctly
 
@@ -53,33 +55,33 @@ class PCNInput extends React.Component {
             return (
                 <div className="middle-element">
                     <div className="two">
-                        <p>View parking penalty charge notice (PCN) issued by local council and Transport for London</p>
+                        <p style={{fontSize: "15px"}}><b>View parking penalty charge notice (PCN) issued by local council and Transport for London</b></p>
                         <br/>
                         <h1>What is the vehicle's registration number? </h1>
 
-                        <form onSubmit={this.handleSubmit} action="/results">
-                            <label>Registration number (number plate)</label>
-                            <br/><br/>
-                            <label>For example CU57ABC</label>
-                            <br/><br/>
+                        <form onSubmit={this.handleSubmit} >
+                            <label><b>Registration number (number plate)</b></label>
+                            <p id="exampletext">For example CU57ABC</p>
                             <input
                                 type="text"
                                 name="regnum"
+                                id="inputbox"
                                 onChange={this.handleInputChange}
-                                pattern="(^[A-Z]{2}[0-9]{2}\s?[A-Z]{3}$)|(^[A-Z][0-9]{1,3}[A-Z]{3}$)|(^[A-Z]{3}[0-9]{1,3}[A-Z]$)|(^[0-9]{1,4}[A-Z]{1,2}$)|(^[0-9]{1,3}[A-Z]{1,3}$)|(^[A-Z]{1,2}[0-9]{1,4}$)|(^[A-Z]{1,3}[0-9]{1,3}$)|(^[A-Z]{1,3}[0-9]{1,4}$)|(^[0-9]{3}[DX]{1}[0-9]{3}$)"
+                                // pattern="(^[A-Z]{2}[0-9]{2}\s?[A-Z]{3}$)|(^[A-Z][0-9]{1,3}[A-Z]{3}$)|(^[A-Z]{3}[0-9]{1,3}[A-Z]$)|(^[0-9]{1,4}[A-Z]{1,2}$)|(^[0-9]{1,3}[A-Z]{1,3}$)|(^[A-Z]{1,2}[0-9]{1,4}$)|(^[A-Z]{1,3}[0-9]{1,3}$)|(^[A-Z]{1,3}[0-9]{1,4}$)|(^[0-9]{3}[DX]{1}[0-9]{3}$)"
                                 required
                             />
                             <br/><br/>
-                            <label>Penalty Charge Notice (PCN) number</label>
-                            <br/><br/>
+                            <label><b>Penalty Charge Notice (PCN) number</b></label>
+                            <p id="exampletext">Optional</p>
                             <input
                                 type="text"
                                 name="pcnnum"
-                                pattern="^['A-Z']['A-Z'][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]"
+                                id="inputbox"
+                                // pattern="^['A-Z']['A-Z'][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]"
                                 required
                             />
                             <br/><br/>
-                            <button type="submit">Continue</button>
+                            <button type="submit" id="formbutton">Continue</button>
                         </form>
 
                     </div>
@@ -90,14 +92,22 @@ class PCNInput extends React.Component {
             return (
                 <div className="middle-element">
                     <div className="two">
-                        <p>Registration: {this.state.flask_response.registration}</p>
-                        <p>Date: {this.state.flask_response.date}</p>
-                        <p>Time: {this.state.flask_response.time}</p>
-                        <p>Make: {this.state.flask_response.make}</p>
-                        <p>Color: {this.state.flask_response.color}</p>
-                        <Link to={"/vehicleinformation"} state={this.state.flask_response}>Vehicle Information</Link>
+                        <p style={{lineHeight: "0px"}}>{this.state.flask_response.registration}</p>
+                        <h1>{this.state.flask_response.make}{this.state.flask_response.info.model}</h1>
+                        <Link style={{fontSize: "12px"}}>Check another vehicle</Link>
                     </div>
-                </div>
+                        <div className="vehiclegrid">
+                            <div className="oneinformation">
+                                <h5 style={{color: "#808080"}}>Colour</h5>
+                                <h4>{this.state.flask_response.info.color}</h4>
+                                <Link style={{fontSize: "12px"}} to={"/vehicleinformation"} state={{ticket: this.state.flask_response}}>Get a PCN reminder</Link>
+                            </div>
+                            <div className="twoinformation">
+                                <h5 style={{color: "#808080"}}>Fuel Type</h5>
+                                <h4>{this.state.flask_response.info.fuel}</h4>
+                            </div>
+                        </div>
+                    </div>
             )
         }
     }
