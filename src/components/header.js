@@ -14,6 +14,7 @@ export default function Header() {
             <div className="two">
                         <h1 id="headertext">PCN.UK</h1>
                         <h2 id="headertitle">Get a PCN reminder</h2>
+                        <h2 id="sitewarn">This is NOT a GOV.UK site</h2>
                     {/*<div className="threeheadertext">*/}
                     {/*    <h1 id="notgovsite">This is not a GOV.UK site</h1>*/}
                     {/*</div>*/}
