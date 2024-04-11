@@ -1,6 +1,6 @@
 import '../../Stylesheets/header/header.css';
 import React, {useState, useEffect} from "react";
-import { Link } from "react-router-dom";
+import {Link, useLocation} from "react-router-dom";
 import '../../Stylesheets/layout/centre.css';
 import '../../Stylesheets/centre/centrestyles.css';
 import Header from '../../components/header'
@@ -14,6 +14,9 @@ import '../../Stylesheets/forms.css'
 
 export default function SignUp() {
 
+    const location = useLocation();
+    const pageinfo = location.state;
+    console.log('REMINDER LINK STATE '+JSON.stringify(pageinfo));
 
     return (
         <div className="App">
@@ -25,7 +28,7 @@ export default function SignUp() {
                     <hr/>
                     <div className="signupbox">
                         <h1>You've signed up for an PCN reminder</h1>
-                        <p>You'' get a text message one month before your PCN is due.</p>
+                        <p>You'll get a text message one month before your PCN is due.</p>
                     </div>
                     <h3>What happens next?</h3>
                     <p>We've sent you a confirmation text message.</p>
@@ -36,6 +39,7 @@ export default function SignUp() {
                     MOT reminders service.</p>
                     <p style={{fontSize: "12px"}}><Link style={{fontSize: "12px"}}>What did you think of this service?</Link> (takes 30 seconds)</p>
                     <Link style={{fontSize: "12px"}}>Sign up for another PCN reminder</Link>
+                    <p><Link style={{fontSize: "12px"}} to={"/vehicleinformation"} state={pageinfo}>Get a PCN reminder</Link></p>
                 </div>
             </div>
             <LongBlueLine />

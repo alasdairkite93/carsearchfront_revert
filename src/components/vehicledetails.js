@@ -12,39 +12,43 @@ export default function VehicleDetails() {
     const state = location.state;
     console.log('VEHICLE DETAILS STATE: '+JSON.stringify(state));
 
-    if (state.ticket.case === undefined){
-        state.ticket.case = 'Unavailable';
+    if (state.vehcilestate.ticket.case === undefined){
+        state.vehcilestate.ticket.case = 'Unavailable';
     }
 
-    console.log(state.ticket.images);
+    if (state.vehcilestate.ticket.make != 'AUDI'){
+        state.vehcilestate.ticket.images = '';
+    }
+
+    console.log('state.ticket.images: '+state.vehcilestate.ticket.images);
 
     return (
 
         <div className="App">
             <div className="middle-element">
                 <div className="two" >
-                    <p style={{lineHeight: "0px", fontSize: "25px"}}>{state.ticket.registration}</p>
-                    <h1 style={{fontSize: "40px"}}>{state.ticket.make}{state.ticket.info.model}</h1>
+                    <p style={{lineHeight: "0px", fontSize: "25px"}}>{state.vehcilestate.ticket.registration}</p>
+                    <h1 style={{fontSize: "40px"}}>{state.vehcilestate.ticket.make}{state.vehcilestate.ticket.info.model}</h1>
                     <Link style={{fontSize: "12px"}} >Check another vehicle</Link>
                 </div>
                 <div className="three">
                 <div className="vehiclegrid" style={{marginTop: "150px"}}>
                     <div className="oneinformation">
                         <h5 id="greycol">Colour</h5>
-                        <h4 style={{fontSize: "20px"}}>{state.ticket.info.color}</h4>
+                        <h4 style={{fontSize: "20px"}}>{state.vehcilestate.ticket.info.color}</h4>
                     </div>
                     <div className="twoinformation">
                         <h5 id="greycol">Fuel Type</h5>
-                        <h4 style={{fontSize: "20px"}}>{state.ticket.info.fuel} </h4>
+                        <h4 style={{fontSize: "20px"}}>{state.vehcilestate.ticket.info.fuel} </h4>
                     </div>
                     <div className="threeinformation">
                         <h5 id="greycol">Date of Offence</h5>
-                        <h4 style={{fontSize: "20px"}} >{state.ticket.date}</h4>
+                        <h4 style={{fontSize: "20px"}} >{state.vehcilestate.ticket.date}</h4>
                     </div>
 
-                    <div className="fourinformation">
+                    <div className="fourinformation" style={{marginLeft: "20px"}}>
                         <h5 id="greycol">Current stage of the penalty</h5>
-                        <h4 style={{fontSize: "20px"}}>{state.ticket.case}</h4>
+                        <h4 style={{fontSize: "20px"}}>{state.vehcilestate.ticket.case}</h4>
                     </div>
                     <div className="fiveinformation">
                         <h5 id="greycol">Action</h5>
@@ -59,13 +63,13 @@ export default function VehicleDetails() {
                 <div className="four">
                     <div className="vehiclegridimage">
                         <div className="vehiclegridone">
-                            <p>{state.ticket.council} Council believes that you are liable to pay a penalty charge with respect
+                            <p>{state.vehcilestate.ticket.council} Council believes that you are liable to pay a penalty charge with respect
                             to the above vehicle for the following alleged contravention.</p>
-                            <p><b>Contravention: </b>{state.ticket.contravention}</p>
-                            <p>In {state.ticket.location} on {state.ticket.date} at {state.time}</p>
+                            <p><b>Contravention: </b>{state.vehcilestate.ticket.contravention}</p>
+                            <p>In {state.vehcilestate.ticket.location} on {state.vehcilestate.ticket.date} at {state.time}</p>
                         </div>
                         <div className="vehiclegridtwo">
-                            <img src={state.ticket.images}/>
+                            <img src={state.vehcilestate.ticket.images}/>
                         </div>
                     </div>
                 </div>

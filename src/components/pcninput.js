@@ -66,6 +66,7 @@ class PCNInput extends React.Component {
                                 type="text"
                                 name="regnum"
                                 id="inputbox"
+                                autoCapitalize="on"
                                 onChange={this.handleInputChange}
                                 // pattern="(^[A-Z]{2}[0-9]{2}\s?[A-Z]{3}$)|(^[A-Z][0-9]{1,3}[A-Z]{3}$)|(^[A-Z]{3}[0-9]{1,3}[A-Z]$)|(^[0-9]{1,4}[A-Z]{1,2}$)|(^[0-9]{1,3}[A-Z]{1,3}$)|(^[A-Z]{1,2}[0-9]{1,4}$)|(^[A-Z]{1,3}[0-9]{1,3}$)|(^[A-Z]{1,3}[0-9]{1,4}$)|(^[0-9]{3}[DX]{1}[0-9]{3}$)"
                                 required
@@ -76,6 +77,7 @@ class PCNInput extends React.Component {
                             <input
                                 type="text"
                                 name="pcnnum"
+                                autoCapitalize="on"
                                 id="inputbox"
                                 // pattern="^['A-Z']['A-Z'][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]"
                                 required
@@ -95,12 +97,14 @@ class PCNInput extends React.Component {
                         <p style={{lineHeight: "0px"}}>{this.state.flask_response.registration}</p>
                         <h1>{this.state.flask_response.make}{this.state.flask_response.info.model}</h1>
                         <Link style={{fontSize: "12px"}}>Check another vehicle</Link>
+                        <p><Link style={{fontSize: "12px", marginBottom: "10px" }} to={"/reminder"} state={{ticket: this.state.flask_response}}>Get a Reminder</Link></p>
+
                     </div>
                         <div className="vehiclegrid">
                             <div className="oneinformation">
                                 <h5 style={{color: "#808080"}}>Colour</h5>
                                 <h4>{this.state.flask_response.info.color}</h4>
-                                <Link style={{fontSize: "12px"}} to={"/vehicleinformation"} state={{ticket: this.state.flask_response}}>Get a PCN reminder</Link>
+                                {/*<Link style={{fontSize: "12px"}} to={"/vehicleinformation"} state={{ticket: this.state.flask_response}}>Get a PCN reminder</Link>*/}
                             </div>
                             <div className="twoinformation">
                                 <h5 style={{color: "#808080"}}>Fuel Type</h5>

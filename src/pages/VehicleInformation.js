@@ -21,7 +21,6 @@ export default function VehicleInformation() {
             <Header />
             <BlueLine />
             <BackButton/>
-            <ReminderLink />
             <VehicleDetails state={state} />
             <LongBlueLine />
             <Footer />
