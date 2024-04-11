@@ -27,7 +27,7 @@ class PCNInput extends React.Component {
             let reg_number = e.target.regnum.value;
             let pcn_number = e.target.pcnnum.value;
 
-            const {data} = await axios.post('http://127.0.0.1:5000/postrequest', {
+            const {data} = await axios.post('https://emailback2.onrender.com/postrequest', {
                 reg_number,
                 pcn_number
             }, {
