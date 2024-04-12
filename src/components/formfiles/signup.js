@@ -23,9 +23,9 @@ export default function SignUp() {
 
             <Header/>
             <BlueLine/>
+            <BackButton />
             <div className="middle-element">
                 <div className="two" id="margintop">
-                    <hr/>
                     <div className="signupbox">
                         <h1>You've signed up for an PCN reminder</h1>
                         <p>You'll get a text message one month before your PCN is due.</p>

@@ -32,7 +32,7 @@ export default function TextInput() {
                             <h1>What is your mobile number?</h1>
                             <p><b>Mobile phone number</b></p>
                             <p id="greytext">Your reminder will be sent here</p>
-                            <input id="inputbox" type="text" value={text} onInput={e => setText(e.target.value)}></input>
+                            <input id="inputbox" type="text" value={text} onInput={e => setText(e.target.value)} required></input>
                             <br/>
                             <button type="submit" id="formbutton" onClick={handleOnClick}>Continue</button>
                         </div>

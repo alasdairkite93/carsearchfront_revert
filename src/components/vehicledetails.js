@@ -16,11 +16,8 @@ export default function VehicleDetails() {
         state.vehcilestate.ticket.case = 'Unavailable';
     }
 
-    if (state.vehcilestate.ticket.make != 'AUDI'){
-        state.vehcilestate.ticket.images = '';
-    }
 
-    console.log('state.ticket.images: '+state.vehcilestate.ticket.images);
+    console.log(state.vehcilestate.ticket.images);
 
     return (
 

@@ -39,7 +39,7 @@ export default function Activation() {
                     <p>Enter the code on this page to activate your reminder.</p>
                     <br/>
                     <p>Your activation code</p>
-                    <input id="inputbox" type="text" value={activationCode} onInput={e => setCode(e.target.value)}></input>
+                    <input id="inputbox" type="text" value={activationCode} onInput={e => setCode(e.target.value)} required></input>
                     <div className="spacing">
                         <button type="submit" id="formbutton" onClick={handleOnSubmit}>Continue</button>
                     </div>

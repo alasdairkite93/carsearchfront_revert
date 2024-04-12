@@ -36,7 +36,7 @@ export default function EmailInput() {
                             <h1>What is your email address?</h1>
                             <p><b>Email address</b></p>
                             <p id="greytext">Your reminder will be sent here</p>
-                            <input id="inputbox" type="text" value={email} onInput={e => setEmail(e.target.value)}></input>
+                            <input id="inputbox" type="text" value={email} onInput={e => setEmail(e.target.value)} required></input>
                             <br/>
                             <button type="submit" id="formbutton" onClick={handleOnSubmit}>Continue</button>
                         </div>
