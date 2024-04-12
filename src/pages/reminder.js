@@ -87,7 +87,7 @@ export default function VehicleReminder() {
                         <button type="submit" id="formbutton" onClick={handleOnClick}>Continue</button>
                     </form>
                     <div className="pricebox">
-                        <h3>Free for 6 months</h3>
+                        <h3>1 month free</h3>
                         <p>the £1 per month for maximum of 2 cars and £5 per month for company fleets maximum of 10 cars</p>
                     </div>
                 </div>

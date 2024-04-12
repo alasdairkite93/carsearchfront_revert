@@ -27,6 +27,7 @@ class PCNInput extends React.Component {
             let reg_number = e.target.regnum.value;
             let pcn_number = e.target.pcnnum.value;
 
+
             const {data} = await axios.post('https://emailback2.onrender.com/postrequest', {
                 reg_number,
                 pcn_number
@@ -97,7 +98,7 @@ class PCNInput extends React.Component {
                         <p style={{lineHeight: "0px"}}>{this.state.flask_response.registration}</p>
                         <h1>{this.state.flask_response.make}{this.state.flask_response.info.model}</h1>
                         <Link style={{fontSize: "12px"}}>Check another vehicle</Link>
-                        <p><Link style={{fontSize: "12px", marginBottom: "10px" }} to={"/reminder"} state={{ticket: this.state.flask_response}}>Get a Reminder</Link></p>
+                        <p><Link style={{fontSize: "12px", marginBottom: "10px" }} to={"/reminder"} state={{ticket: this.state.flask_response}}>Get Information and Subscribe</Link></p>
 
                     </div>
                         <div className="vehiclegrid">
