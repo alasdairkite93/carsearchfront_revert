@@ -50,7 +50,7 @@ export default function SummaryPage() {
                             </tr>
                             <tr>
                                 <td>Make</td>
-                                <td><b>{state.vehcilestate.vehicledetails.ticket.make}</b></td>
+                                <td><b>{state.vehcilestate.vehicledetails.ticket.info.make}</b></td>
                             </tr>
                             <tr>
                                 <td>Model</td>

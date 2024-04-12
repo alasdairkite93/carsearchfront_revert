@@ -38,8 +38,8 @@ export default function SignUp() {
                     <p>Your mobile phone company will charge you a standard network fee for sending a text message to unsubscribe from the
                     MOT reminders service.</p>
                     <p style={{fontSize: "12px"}}><Link style={{fontSize: "12px"}}>What did you think of this service?</Link> (takes 30 seconds)</p>
-                    <Link style={{fontSize: "12px"}}>Sign up for another PCN reminder</Link>
-                    <p><Link style={{fontSize: "12px"}} to={"/vehicleinformation"} state={pageinfo}>Get a PCN reminder</Link></p>
+                    <Link to={"/"} style={{fontSize: "12px"}}>Sign up for another PCN reminder</Link>
+                    <p><Link style={{fontSize: "12px"}} to={"/vehicleinformation"} state={pageinfo}>Continue</Link></p>
                 </div>
             </div>
             <LongBlueLine />
