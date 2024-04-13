@@ -53,10 +53,6 @@ export default function SummaryPage() {
                                 <td><b>{state.vehcilestate.vehicledetails.ticket.info.make}</b></td>
                             </tr>
                             <tr>
-                                <td>Model</td>
-                                <td><b>{state.vehcilestate.vehicledetails.ticket.info.model}</b></td>
-                            </tr>
-                            <tr>
                                 <td>Colour</td>
                                 <td><b>{state.vehcilestate.vehicledetails.ticket.info.color}</b></td>
                             </tr>
