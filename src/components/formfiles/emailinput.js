@@ -24,6 +24,8 @@ export default function EmailInput() {
 
     }
 
+    console.log('EMail input state: '+JSON.stringify(pagestate));
+
     return (
         <div className="App">
             <Header/>

@@ -13,11 +13,16 @@ import TextInput from "./components/formfiles/textinput";
 import SummaryPage from "../src/pages/summarypage";
 import Activation from "./components/formfiles/activation";
 import SignUp from "./components/formfiles/signup";
+import PostSubmit from "../src/pages/postsubmit";
 
 const router = createBrowserRouter([
     {
         path:"/",
         element: <App /> ,
+    },
+    {
+        path:"/postsubmit",
+        element: <PostSubmit />
     },
     {
         path: "/vehicleinformation",

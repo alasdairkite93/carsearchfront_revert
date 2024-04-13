@@ -22,6 +22,8 @@ export default function Activation() {
     const [activationCode, setCode] = useState();
 
 
+    console.log('Activation state: '+JSON.stringify(pagestate));
+
     function handleOnSubmit() {
         navigate("/signup", { state: pagestate});
     }

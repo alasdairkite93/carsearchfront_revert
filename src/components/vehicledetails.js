@@ -17,8 +17,6 @@ export default function VehicleDetails() {
     }
 
 
-    console.log(state.vehcilestate.ticket.images);
-
     return (
 
         <div className="App">
@@ -26,10 +24,9 @@ export default function VehicleDetails() {
                 <div className="two" >
                     <p style={{lineHeight: "0px", fontSize: "25px"}}>{state.vehcilestate.ticket.registration}</p>
                     <h1 style={{fontSize: "40px"}}>{state.vehcilestate.ticket.make}{state.vehcilestate.ticket.info.model}</h1>
-                    <Link style={{fontSize: "12px"}} >Check another vehicle</Link>
                 </div>
                 <div className="three">
-                <div className="vehiclegrid" style={{marginTop: "150px"}}>
+                    <div className="vehiclegrid" style={{marginTop: "150px"}}>
                     <div className="oneinformation">
                         <h5 id="greycol">Colour</h5>
                         <h4 style={{fontSize: "20px"}}>{state.vehcilestate.ticket.info.color}</h4>
@@ -55,7 +52,8 @@ export default function VehicleDetails() {
                             <Link to={"/challenge"} style={{fontSize: "20px", color: "#4C8EC0"}} state={state}><b>Challenge</b></Link>
                         </div>
                     </div>
-                </div>
+
+                    </div>
                 </div>
                 <div className="four">
                     <div className="vehiclegridimage">

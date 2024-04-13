@@ -16,7 +16,7 @@ export default function SignUp() {
 
     const location = useLocation();
     const pageinfo = location.state;
-    console.log('REMINDER LINK STATE '+JSON.stringify(pageinfo));
+    console.log('SIGN UP PAGE STATE '+JSON.stringify(pageinfo));
 
     return (
         <div className="App">
