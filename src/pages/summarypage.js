@@ -26,7 +26,7 @@ export default function SummaryPage() {
 
 
     function handleOnSubmit() {
-        navigate("/activation", { state: { contactdetail: state.contactdetail, vehcilestate: state.vehcilestate.vehicledetails}});
+        navigate("/payment", { state: { contactdetail: state.contactdetail, vehcilestate: state.vehcilestate.vehicledetails}});
     }
 
     return (

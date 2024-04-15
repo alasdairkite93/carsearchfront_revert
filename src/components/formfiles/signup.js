@@ -1,6 +1,6 @@
 import '../../Stylesheets/header/header.css';
 import React, {useState, useEffect} from "react";
-import {Link, useLocation} from "react-router-dom";
+import {Link, useLocation, useNavigate} from "react-router-dom";
 import '../../Stylesheets/layout/centre.css';
 import '../../Stylesheets/centre/centrestyles.css';
 import Header from '../../components/header'
@@ -16,7 +16,12 @@ export default function SignUp() {
 
     const location = useLocation();
     const pageinfo = location.state;
+    const navigate = useNavigate();
     console.log('SIGN UP PAGE STATE '+JSON.stringify(pageinfo));
+
+    function handleOnSubmit() {
+        navigate("/vehicleinformation", pageinfo);
+    }
 
     return (
         <div className="App">
@@ -37,9 +42,9 @@ export default function SignUp() {
                     <p>If you want to unsubscribe at any time, text <b>STOP GK66FTP</b> to 07491163045.</p>
                     <p>Your mobile phone company will charge you a standard network fee for sending a text message to unsubscribe from the
                     MOT reminders service.</p>
-                    <p style={{fontSize: "12px"}}><Link style={{fontSize: "12px"}}>What did you think of this service?</Link> (takes 30 seconds)</p>
-                    <Link to={"/"} style={{fontSize: "12px"}}>Sign up for another PCN reminder</Link>
-                    <p><Link style={{fontSize: "12px"}} to={"/vehicleinformation"} state={pageinfo}>Continue</Link></p>
+                        <p style={{fontSize: "12px"}}><Link style={{fontSize: "12px"}}>What did you think of this service?</Link> (takes 30 seconds)</p>
+                        <Link to={"/"} style={{fontSize: "12px"}}>Sign up for another PCN reminder</Link>
+                    <p><button id="formbutton"><Link style={{fontSize: "12px", color: "white", textDecoration: "none"}} to={"/vehicleinformation"} state={pageinfo}>Continue</Link></button></p>
                 </div>
             </div>
             <LongBlueLine />

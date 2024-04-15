@@ -10,8 +10,13 @@ import VehicleDetails from '../components/vehicledetails';
 import Footer from '../components/footer';
 import LongBlueLine from "../components/longblue";
 import '../Stylesheets/pay.css';
+import {Link, useLocation} from "react-router-dom";
 
-export default function pay() {
+export default function Pay() {
+
+    const location = useLocation();
+    const pageinfo = location.state;
+    console.log('SIGN UP PAGE STATE '+JSON.stringify(pageinfo));
 
     return (
         <div className="App">
@@ -23,6 +28,9 @@ export default function pay() {
                 <div className="paymiddle">
                     <div className="paybuttoncontainer">
                         <button id="singlepayment">
+                            <Link style={{fontSize: "12px"}} to={"/signup"} state={pageinfo}>
+
+
                             <div className="paybuttongrid">
                                 <div className="paybuttonleft">
                                     <span class="dot"></span>
@@ -32,8 +40,10 @@ export default function pay() {
                                     <p>Pay a single invoice</p>
                                 </div>
                             </div>
+                            </Link>
                         </button>
                         <button id="singlepayment">
+                            <Link style={{fontSize: "12px"}} to={"/signup"} state={pageinfo}>
                             <div className="paybuttongrid">
                                 <div className="paybuttonleft">
                                     <span className="dot"></span>
@@ -45,6 +55,7 @@ export default function pay() {
                                     <p>Make payments against two or more invoices</p>
                                 </div>
                             </div>
+                            </Link>
                         </button>
                         <button id="singlepayment">
                             <div>
