@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Link, useNavigate} from "react-router-dom";
 import '../Stylesheets/header/header.css';
-
+import '../Stylesheets/forms.css';
 import '../Stylesheets/layout/centre.css';
 import '../Stylesheets/centre/centrestyles.css';
 
@@ -15,8 +15,8 @@ export default function BackButton() {
             <div className="straightlineback">
               <hr/>
                 <div class="navbuttons">
-                    <button style={{textAlign: "left", marginRight: "20px"}} onClick={() => history(-1)}>Back</button>
-                    <button><Link style={{fontSize: "12px"}} to={"/"} >Check another vehicle</Link></button>
+                    <button id="formbutton" style={{marginRight: "20px"}} onClick={() => history(-1)}>Back</button>
+                    <button id="formbutton"><Link style={{fontSize: "14px", color: "white", textDecoration: "none"}} to={"/"} >Check another vehicle</Link></button>
                 </div>
             </div>
         </div>

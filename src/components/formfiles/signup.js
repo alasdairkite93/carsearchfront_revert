@@ -44,7 +44,7 @@ export default function SignUp() {
                     MOT reminders service.</p>
                         <p style={{fontSize: "12px"}}><Link style={{fontSize: "12px"}}>What did you think of this service?</Link> (takes 30 seconds)</p>
                         <Link to={"/"} style={{fontSize: "12px"}}>Sign up for another PCN reminder</Link>
-                    <p><button id="formbutton"><Link style={{fontSize: "12px", color: "white", textDecoration: "none"}} to={"/vehicleinformation"} state={pageinfo}>Continue</Link></button></p>
+                    <p><button id="formbutton"><Link style={{fontSize: "14px", color: "white", textDecoration: "none"}} to={"/vehicleinformation"} state={pageinfo}>Continue</Link></button></p>
                 </div>
             </div>
             <LongBlueLine />
