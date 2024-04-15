@@ -17,8 +17,8 @@ export default function PCNInput() {
 
         e.preventDefault();
 
-        let reg_number = e.target.regnum.value;
-        let pcn_number = e.target.pcnnum.value;
+        let reg_number = e.target.regnum.value.toUpperCase();
+        let pcn_number = e.target.pcnnum.value.toUpperCase();
 
         console.log('regnum: '+reg_number);
         console.log('pcnNumber: '+pcn_number);
