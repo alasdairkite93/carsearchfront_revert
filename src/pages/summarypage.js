@@ -57,7 +57,7 @@ export default function SummaryPage() {
                                 <td><b>{state.vehcilestate.vehicledetails.ticket.info.color}</b></td>
                             </tr>
                             <tr>
-                                <td>Year of manufacture</td>
+                                <td>Date of offence</td>
                                 <td><b>{state.vehcilestate.vehicledetails.ticket.date}</b></td>
                             </tr>
                             <tr>
