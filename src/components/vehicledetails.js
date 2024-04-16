@@ -11,19 +11,14 @@ export default function VehicleDetails() {
     const location = useLocation();
     const state = location.state;
     console.log('VEHICLE DETAILS STATE: '+JSON.stringify(state));
-
-    if (state.vehcilestate.ticket.case === undefined){
-        state.vehcilestate.ticket.case = 'Unavailable';
-    }
-
-
+    console.log('TESTING: '+JSON.stringify(state.vehcilestate.ticket.info.model));
     return (
 
         <div className="App">
             <div className="middle-element">
                 <div className="two" >
                     <p style={{lineHeight: "0px", fontSize: "25px"}}>{state.vehcilestate.ticket.registration}</p>
-                    <h1 style={{fontSize: "40px"}}>{state.vehcilestate.ticket.make}{state.vehcilestate.ticket.info.model}</h1>
+                    <h1 style={{fontSize: "40px"}}>{state.vehcilestate.ticket.info.make}</h1>
                 </div>
                 <div className="three">
                     <div className="vehiclegrid" style={{marginTop: "150px"}}>
@@ -38,11 +33,6 @@ export default function VehicleDetails() {
                     <div className="threeinformation">
                         <h5 id="greycol">Date of Offence</h5>
                         <h4 style={{fontSize: "20px"}} >{state.vehcilestate.ticket.date}</h4>
-                    </div>
-
-                    <div className="fourinformation" style={{marginLeft: "20px"}}>
-                        <h5 id="greycol">Current stage of the penalty</h5>
-                        <h4 style={{fontSize: "20px"}}>{state.vehcilestate.ticket.case}</h4>
                     </div>
                     <div className="fiveinformation">
                         <h5 id="greycol">Action</h5>

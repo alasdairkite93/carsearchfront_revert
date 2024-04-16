@@ -15,7 +15,7 @@ export default function BackButton() {
             <div className="straightlineback">
               <hr/>
                 <div class="navbuttons">
-                    <button id="formbutton" style={{marginRight: "20px"}} onClick={() => history(-1)}>Back</button>
+                    <button id="formbutton" style={{marginRight: "20px", marginBottom: "10px"}} onClick={() => history(-1)}>Back</button>
                     <button id="formbutton"><Link style={{fontSize: "14px", color: "white", textDecoration: "none"}} to={"/"} >Check another vehicle</Link></button>
                 </div>
             </div>
