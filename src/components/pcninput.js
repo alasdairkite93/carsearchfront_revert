@@ -77,6 +77,7 @@ export default function PCNInput() {
                     <br/><br/>
                     <button type="submit" id="formbutton">Continue</button>
                 </form>
+                <p><i><b>Disclaimer</b> This is a third party service not provided by GOV.UK</i></p>
 
             </div>
         </div>

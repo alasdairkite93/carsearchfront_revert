@@ -24,7 +24,7 @@ export default function Pay() {
     const pagestate = location.state;
     const handleOnSubmit = () => {
 
-        navigate("/vehicleinformation", { state: pagestate});
+        navigate("/signup", { state: pagestate});
 
     }
 

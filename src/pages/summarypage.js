@@ -22,7 +22,7 @@ export default function SummaryPage() {
     const state = location.state;
 
     console.log('Summary page state: ' + JSON.stringify(state));
-
+    console.log(state.vehcilestate);
 
 
     function handleOnSubmit() {
