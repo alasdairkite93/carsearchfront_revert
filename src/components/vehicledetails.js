@@ -37,7 +37,7 @@ export default function VehicleDetails() {
                     <div className="fiveinformation">
                         <h5 id="greycol">Action</h5>
                         <div style={{marginBottom: "15px"}} className="fiveinformationcontent">
-                            <Link to={"/payment"} style={{fontSize: "20px", color: "#4C8EC0"}} state={state}><b>Pay Now</b></Link>
+                            <Link to={"/multipayment"} style={{fontSize: "20px", color: "#4C8EC0"}} state={state}><b>Pay Now</b></Link>
                             <span>&nbsp; &nbsp; &nbsp;</span>
                             <Link to={"/challenge"} style={{fontSize: "20px", color: "#4C8EC0"}} state={state}><b>Challenge</b></Link>
                         </div>

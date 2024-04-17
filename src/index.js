@@ -14,6 +14,7 @@ import SummaryPage from "../src/pages/summarypage";
 import Activation from "./components/formfiles/activation";
 import SignUp from "./components/formfiles/signup";
 import PostSubmit from "../src/pages/postsubmit";
+import PaymentMulti from "./components/paymentmulti";
 
 const router = createBrowserRouter([
     {
@@ -59,6 +60,10 @@ const router = createBrowserRouter([
     {
         path: "/signup",
         element: < SignUp />
+    },
+    {
+        path: "/multipayment",
+        element: < PaymentMulti />
     }
 ]);
 
