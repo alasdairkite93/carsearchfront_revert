@@ -45,10 +45,12 @@ export default function Postsubmit() {
                         <h5 style={{color: "#808080"}}>Fuel Type</h5>
                         <h4>{pagestate.info.fuel}</h4>
                     </div>
-                    <h3>Outstanding Tickets (1)</h3>
-                    <div>
+                </div>
+                <div className="vehiclegrid">
+                    <div className="oneinformation">
+                        <h3>Outstanding Tickets (1)</h3>
                         <table id="summarytable">
-                            <tr >
+                            <tr>
                                 <td >{pagestate.council} (1)</td>
                                 <td><Link>View</Link></td>
                             </tr>

@@ -60,6 +60,7 @@
 }
 
 #summarytable {
+       float: left;
        width: 200px;
        color: #808080;
        border-bottom: none;
