@@ -52,7 +52,8 @@ export default function Postsubmit() {
                         <table id="summarytable">
                             <tr>
                                 <td >{pagestate.council} (1)</td>
-                                <td><Link>View</Link></td>
+                                <td><Link style={{fontSize: "14px", marginBottom: "10px"}} to={"/reminder"}
+                                          state={{ticket: pagestate}}>View</Link></td>
                             </tr>
                         </table>
                     </div>
