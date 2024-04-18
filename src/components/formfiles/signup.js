@@ -41,7 +41,7 @@ export default function SignUp() {
                     <h3>Unsubscribing from PCN reminders</h3>
                     <p>If you want to unsubscribe at any time, text <b>STOP GK66FTP</b> to 07491163045.</p>
                     <p>Your mobile phone company will charge you a standard network fee for sending a text message to unsubscribe from the
-                    MOT reminders service.</p>
+                    PCN reminders service.</p>
                         <p style={{fontSize: "12px"}}><Link style={{fontSize: "12px"}}>What did you think of this service?</Link> (takes 30 seconds)</p>
                         <Link to={"/"} style={{fontSize: "12px"}}>Sign up for another PCN reminder</Link>
                     <p><button id="formbutton"><Link style={{fontSize: "14px", color: "white", textDecoration: "none"}} to={"/vehicleinformation"} state={pageinfo}>Continue</Link></button></p>
