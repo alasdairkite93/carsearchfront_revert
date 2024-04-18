@@ -58,3 +58,10 @@
        grid-column: 2/3;
        grid-row: 3/3;
 }
+
+#summarytable {
+       width: 200px;
+       color: #808080;
+       border-bottom: none;
+       border-bottom-width: 0;
+}
