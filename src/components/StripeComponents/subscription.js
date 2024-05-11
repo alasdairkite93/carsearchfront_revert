@@ -7,7 +7,7 @@ export default function Subscription() {
     const [price, setPrice] = useState();
     const navigate = useNavigate();
 
-    console.log("Customer ID: " + JSON.stringify(customer_data.state.id));
+    console.log("Customer ID: " + JSON.stringify(customer_data));
 
     const handleOnSubmit = () => {
 
