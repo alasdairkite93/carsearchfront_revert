@@ -11,9 +11,9 @@ export default function Register() {
         const name_value = document.querySelector('#customer_name');
         const emailInput = document.querySelector('#email');
 
-        console.log('HANDLE SUBMIT: name: '+name_value+' email: '+emailInput);
+        console.log('HANDLE SUBMIT: name: '+JSON.stringify(name_value)+' email: '+JSON.stringify(emailInput));
 
-        const {customerdata} = fetch('/create-customer', {
+        const {customerdata} = fetch('https://emailback2.onrender.com/create-customer', {
             method: 'post',
             headers: {
                 'Content-Type': 'application/json',

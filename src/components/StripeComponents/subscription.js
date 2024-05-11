@@ -14,7 +14,7 @@ export default function Subscription() {
         const priceid = 'price_1PCnGm2LoquNKfKzB9UtPY2K';
         const customerid = customer_data.state.id;
 
-        const {subscription} = fetch('/create-subscription', {
+        const {subscription} = fetch('https://emailback2.onrender.com/create-subscription', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
