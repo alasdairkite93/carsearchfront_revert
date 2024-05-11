@@ -26,22 +26,30 @@ export default function PCNInput() {
         setPcn(pcn_number);
         setReg(reg_number);
 
-        const {data} = await axios.post('https://emailback2.onrender.com/postrequest', {
-            reg_number,
-            pcn_number
-        }, {
-            headers: {
-                'Content-Type':'multipart/form-data'
-            }
-        })
 
-        console.log('DATA: ', data);
+        try {
+            // const {data} = await axios.post('https://emailback2.onrender.com/postrequest', {
+            const {data} = await axios.post('https://emailback2.onrender.com/postrequest', {
 
-        setResponse(data);
+                reg_number,
+                pcn_number
+            }, {
+                headers: {
+                    'Content-Type': 'multipart/form-data'
+                }
+            })
 
-        console.log('FLASK RESPONSE: '+data);
+            console.log('DATA: ', data);
 
-        navigate("/postsubmit", { state: data});
+            setResponse(data);
+
+            console.log('FLASK RESPONSE: ' + data);
+
+            navigate("/postsubmit", {state: data});
+        }
+        catch (e) {
+            document.getElementById("#error").innerHTML = "Error these credentials are not recognised,";
+        }
 
         //Add error handling for whether the data was returned correctly
     }
@@ -51,6 +59,7 @@ export default function PCNInput() {
             <div className="two">
                 <p style={{fontSize: "15px"}}><b>View parking penalty charge notice (PCN) issued by local council and Transport for London</b></p>
                 <br/>
+                <p id="error"></p>
                 <h1>What is the vehicle's registration number? </h1>
 
                 <form onSubmit={handleSubmit} >
