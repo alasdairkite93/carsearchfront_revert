@@ -26,6 +26,9 @@ export default function SummaryPage() {
 
 
     function handleOnSubmit() {
+
+        //Proposed add record to database to signup
+
         navigate("/payment", { state: { contactdetail: state.contactdetail, vehcilestate: state.vehcilestate.vehicledetails}});
     }
 

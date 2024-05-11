@@ -15,6 +15,9 @@ import Activation from "./components/formfiles/activation";
 import SignUp from "./components/formfiles/signup";
 import PostSubmit from "../src/pages/postsubmit";
 import PaymentMulti from "./components/paymentmulti";
+import Register from "./components/StripeComponents/register";
+import Subscription from "./components/StripeComponents/subscription";
+import Stripepayment from "./components/StripeComponents/stripepayment";
 
 const router = createBrowserRouter([
     {
@@ -64,6 +67,18 @@ const router = createBrowserRouter([
     {
         path: "/multipayment",
         element: < PaymentMulti />
+    },
+    {
+        path: "/StripeRegister",
+        element: < Register />
+    },
+    {
+        path: "/StripeSubscription",
+        element: <Subscription />
+    },
+    {
+        path: "/StripePayment",
+        element: < Stripepayment />
     }
 ]);
 

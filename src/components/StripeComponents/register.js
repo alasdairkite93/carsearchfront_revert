@@ -22,7 +22,7 @@ export default function Register() {
             }),
         }).then(r => r.json())
             .then(r => {
-                navigate('/subscription', {state: r});
+                navigate('/StripeSubscription', {state: r});
             })
     }
 

@@ -23,7 +23,8 @@ export default function Pay() {
     const [email, setEmail] = useState('');
     const pagestate = location.state;
     const handleOnSubmit = () => {
-
+        //Suggested to wait for payment to be successful and then to add
+        //customer contact details on payment success.
         navigate("/signup", { state: pagestate});
 
     }
@@ -33,7 +34,6 @@ export default function Pay() {
             <Header/>
             <BlueLine/>
             <BackButton/>
-
             <div className="middle-element">
                 <div className="two">
                     <div className="paymentinformation">
@@ -69,6 +69,7 @@ export default function Pay() {
                     <button type="submit" id="formbutton" onClick={handleOnSubmit}>Continue</button>
                 </div>
             </div>
+            <Link to="/StripeRegister">Stripe Register</Link>
             <LongBlueLine/>
             <Footer/>
         </div>
