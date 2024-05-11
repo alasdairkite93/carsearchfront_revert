@@ -44,7 +44,7 @@ export default function PCNInput() {
             setResponse(data);
 
             if (data.registration.includes("could not be found")) {
-                document.getElementById("#error").innerHTML = "Error these credentials are not recognised,";
+                document.getElementById("error").innerHTML = "Error these credentials are not recognised,";
             }
             else {
                 console.log('FLASK RESPONSE: ' + data);
@@ -52,7 +52,7 @@ export default function PCNInput() {
             }
         }
         catch (e) {
-            document.getElementById("#error").innerHTML = "Error these credentials are not recognised,";
+            document.getElementById("error").innerHTML = "Error these credentials are not recognised,";
         }
 
         //Add error handling for whether the data was returned correctly
