@@ -43,9 +43,13 @@ export default function PCNInput() {
 
             setResponse(data);
 
-            console.log('FLASK RESPONSE: ' + data);
-
-            navigate("/postsubmit", {state: data});
+            if (data.registration.includes("could not be found")) {
+                document.getElementById("#error").innerHTML = "Error these credentials are not recognised,";
+            }
+            else {
+                console.log('FLASK RESPONSE: ' + data);
+                navigate("/postsubmit", {state: data});
+            }
         }
         catch (e) {
             document.getElementById("#error").innerHTML = "Error these credentials are not recognised,";

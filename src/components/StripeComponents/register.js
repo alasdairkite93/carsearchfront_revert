@@ -11,6 +11,8 @@ export default function Register() {
         const name_value = document.querySelector('#customer_name');
         const emailInput = document.querySelector('#email');
 
+        console.log('HANDLE SUBMIT: name: '+name_value+' email: '+emailInput);
+
         const {customerdata} = fetch('/create-customer', {
             method: 'post',
             headers: {
@@ -21,6 +23,7 @@ export default function Register() {
                 name: name_value.value,
             }),
         }).then(r => r.json())
+            .then(r => console.log(r))
             .then(r => {
                 navigate('/StripeSubscription', {state: r});
             })
