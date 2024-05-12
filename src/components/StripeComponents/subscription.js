@@ -3,7 +3,7 @@ import {useState} from 'react'
 
 export default function Subscription() {
 
-    const customer_data = useLocation();
+    const {customer_data} = useLocation();
     const [price, setPrice] = useState();
     const navigate = useNavigate();
 
