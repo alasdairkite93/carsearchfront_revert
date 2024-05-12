@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {useNavigate} from "react-router-dom";
-
+import axios from "axios";
 export default function Register() {
 
     const navigate = useNavigate();
@@ -8,23 +8,22 @@ export default function Register() {
 
     const handleOnSubmit = async function (e) {
 
-        const name_value = document.querySelector('#customer_name');
-        const emailInput = document.querySelector('#email');
+        let name_value = e.target.customerval.value;
+        let emailInput = e.target.emailval.value;
 
+        console.log('name_value: '+name_value);
+        console.log('emailinput: '+emailInput);
 
-        const {customerdata} = await fetch('https://emailback2.onrender.com/create-customer', {
-            method: 'post',
+        const {customerdata} = await axios.post('https://emailback2.onrender.com/create-customer', {
+            emailInput,
+            name_value,
+        }, {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({
-                email: emailInput.value,
-                name: name_value.value,
-            }),
-        }).then(r => r.json())
-            .then(r => console.log(r))
-            .then(r => {
-                navigate('/StripeSubscription', {state: r, replace: false});            })
+        })
+
+                navigate('/StripeSubscription', {state: customerdata})
     }
 
     return (
@@ -33,10 +32,10 @@ export default function Register() {
             <form id="signup-form">
                 <label>
                     Email
-                    <input id="email" type="email" placeholder="Email address" value="test@example.com" required/>
+                    <input id="email" name="emailval" type="email" placeholder="Email address" value="test@example.com" required/>
                 </label>
                 <label>
-                    <input id="customer_name" type="text" placeholder="Name" value="Alasdair" required/>
+                    <input id="customer_name" name="customerval" type="text" placeholder="Name" value="Alasdair" required/>
                 </label>
                 <button type="button" onClick={handleOnSubmit}>
                     Register
