@@ -6,13 +6,13 @@ export default function Register() {
     const navigate = useNavigate();
     const [customerData, setCustomerData] = useState();
 
-    const handleOnSubmit = () => {
+    const handleOnSubmit = async function (e) {
 
         const name_value = document.querySelector('#customer_name');
         const emailInput = document.querySelector('#email');
 
 
-        const {customerdata} = fetch('https://emailback2.onrender.com/create-customer', {
+        const {customerdata} = await fetch('https://emailback2.onrender.com/create-customer', {
             method: 'post',
             headers: {
                 'Content-Type': 'application/json',
@@ -24,7 +24,7 @@ export default function Register() {
         }).then(r => r.json())
             .then(r => console.log(r))
             .then(r => {
-                navigate('/StripeSubscription', {id: r.id});
+                navigate('/StripeSubscription', {state: r});
             })
     }
 
