@@ -24,8 +24,7 @@ export default function Register() {
         }).then(r => r.json())
             .then(r => console.log(r))
             .then(r => {
-                navigate('/StripeSubscription', {state: r});
-            })
+                navigate('/StripeSubscription', {state: r, replace: false});            })
     }
 
     return (
