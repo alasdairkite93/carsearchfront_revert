@@ -1,50 +1,43 @@
 import {useLocation, useNavigate} from "react-router-dom";
-import {useState} from 'react'
+import {loadStripe} from '@stripe/stripe-js';
+
+const stripe = await loadStripe('pk_test_51PCmo52LoquNKfKzQiLxCcY9RfnB1jOPEaYiO4bEB5zpP8sTS52APPJaASXqsP63cWnmooXqbrkYpnDNMc6IHZlK00QMZote7c');
 
 export default function Subscription() {
 
-    const {customer_data} = useLocation();
-    const [price, setPrice] = useState();
-    const navigate = useNavigate();
+    console.log('SUBSCRIPTION PAGE');
 
-    console.log("Customer ID: " + JSON.stringify(customer_data));
+    const location = useLocation();
 
-    const handleOnSubmit = () => {
+    console.log(JSON.stringify(location));
 
-        const priceid = 'price_1PCnGm2LoquNKfKzB9UtPY2K';
-        const customerid = customer_data.state.id;
+    const secret = JSON.stringify(location.state.clientSecret);
 
-        const {subscription} = fetch('https://emailback2.onrender.com/create-subscription', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                priceId: priceid,
-                customerId: customerid,
-            }),
-        }).then(r => r.json())
-            .then(r => {
-                console.log('Subscription Return: ' + JSON.stringify(r));
-                navigate('/payment', {state: r});
-            })
-    }
+    // const elements = stripe.elements();
 
 
-    const onOptionChange = e => {
-        console.log('price is set to: ' + e.target.value);
-        setPrice(e.target.value);
-    }
+    const options = {
+        clientSecret: location.state.clientSecret,
+        // Fully customizable with appearance API.
+        appearance: {/*...*/},
+    };
+
+// Set up Stripe.js and Elements to use in checkout form, passing the client secret obtained in step 5
+
+// Create and mount the Subscription Element
+    const elements = stripe.elements(options);
+    const paymentElement = elements.create('payment', options);
+    paymentElement.mount('#payment-element');
 
     return (
-        <div>
-            <h3>The subscription page</h3>
-            <input type="radio" id="priceid" value="price_1PCnGm2LoquNKfKzB9UtPY2K"
-                   onChange={onOptionChange}/>
-            <button type="button" onClick={handleOnSubmit}>
-                Subscribe
-            </button>
-        </div>
+            <form id="payment-form">
+                <div id="payment-element">
+                </div>
+                <button id="submit">Subscribe</button>
+                <div id="error-message">
+                </div>
+            </form>
+
     )
 
 }

@@ -1,22 +1,21 @@
 import React, {useState} from 'react';
 import {useNavigate} from "react-router-dom";
-import axios from "axios";
+
 export default function Register() {
 
     const navigate = useNavigate();
     const [customerData, setCustomerData] = useState();
 
-    const handleOnSubmit = async function (e) {
+    const handleOnSubmit = () => {
 
-        e.preventDefault();
+        const name_value = document.querySelector('#customer_name');
+        const emailInput = document.querySelector('#email');
 
-        let emailInput = e.target[0].value;
-        let name_value = e.target[1].value;
+        let customer_id = '';
 
-        console.log('name_value: '+name_value);
-        console.log('emailinput: '+emailInput);
+        console.log('HANDLE SUBMIT: name: '+name_value.value+' email: '+emailInput.value);
 
-        const {customerdata} = await fetch('https://emailback2.onrender.com/create-customer', {
+        const {customerdata} = fetch('https://emailback2.onrender.com/create-customer', {
             method: 'post',
             headers: {
                 'Content-Type': 'application/json',
@@ -26,25 +25,24 @@ export default function Register() {
                 name: name_value.value,
             }),
         }).then(r => r.json())
-            .then(r => console.log(r))
             .then(r => {
-                navigate('/StripeSubscription', {state: customerdata});
+                console.log('response id register: '+r);
+                navigate('/StripeSubscription', {state: r.id});
             })
-
     }
 
     return (
         <div>
             <p>Page state data is {customerData}</p>
-            <form id="signup-form" onSubmit={handleOnSubmit}>
+            <form id="signup-form">
                 <label>
                     Email
-                    <input id="email" name="emailval" type="email" placeholder="Email address" required/>
+                    <input id="email" type="email" placeholder="Email address" value="test@example.com" required/>
                 </label>
                 <label>
-                    <input id="customer_name" name="customerval" type="text" placeholder="Name" required/>
+                    <input id="customer_name" type="text" placeholder="Name" value="Alasdair" required/>
                 </label>
-                <button type="Submit" >
+                <button type="button" onClick={handleOnSubmit}>
                     Register
                 </button>
             </form>

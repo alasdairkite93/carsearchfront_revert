@@ -15,7 +15,7 @@ import Activation from "./components/formfiles/activation";
 import SignUp from "./components/formfiles/signup";
 import PostSubmit from "../src/pages/postsubmit";
 import PaymentMulti from "./components/paymentmulti";
-import Subscribe from "./components/StripeComponents/subscribe";
+import Register from "./components/StripeComponents/register";
 import PostSubscribe from "./components/StripeComponents/PostSubscribe";
 import Subscription from "./components/StripeComponents/subscription";
 
@@ -70,7 +70,7 @@ const router = createBrowserRouter([
     },
     {
         path: "/StripeRegister",
-        element: < Subscribe />
+        element: < Register />
     },
     {
         path: "/StripeSubscription",
