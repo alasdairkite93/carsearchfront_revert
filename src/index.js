@@ -15,9 +15,13 @@ import Activation from "./components/formfiles/activation";
 import SignUp from "./components/formfiles/signup";
 import PostSubmit from "../src/pages/postsubmit";
 import PaymentMulti from "./components/paymentmulti";
+
 import Register from "./components/StripeComponents/register";
-import PostSubscribe from "./components/StripeComponents/PostSubscribe";
 import Subscription from "./components/StripeComponents/subscription";
+import Prices from "./components/StripeComponents/prices"
+
+import EmbeddedForm from "./components/StripeComponents/EmbeddedForm";
+import CheckoutForm from "./components/StripeComponents/CheckoutForm";
 
 const router = createBrowserRouter([
     {
@@ -73,12 +77,23 @@ const router = createBrowserRouter([
         element: < Register />
     },
     {
-        path: "/StripeSubscription",
-        element: <PostSubscribe />
+        path: "/StripePrices",
+        element: <Prices />
     },
     {
-        path: "/StripePayment",
+        path: "/stripepayment",
         element: < Subscription />
+    },
+    {
+        path: "/embeddedform",
+        element: < EmbeddedForm />
+    },
+    {
+        path: "/checkout",
+        element: < CheckoutForm />
+    },
+    {
+
     }
 ]);
 

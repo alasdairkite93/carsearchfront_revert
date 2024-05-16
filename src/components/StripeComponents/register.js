@@ -26,8 +26,8 @@ export default function Register() {
             }),
         }).then(r => r.json())
             .then(r => {
-                console.log('response id register: '+r);
-                navigate('/StripeSubscription', {state: r.id});
+                console.log('response id register: '+JSON.stringify(r));
+                navigate('/StripePrices', {state: r.id});
             })
     }
 
