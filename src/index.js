@@ -16,12 +16,7 @@ import SignUp from "./components/formfiles/signup";
 import PostSubmit from "../src/pages/postsubmit";
 import PaymentMulti from "./components/paymentmulti";
 
-import Register from "./components/StripeComponents/register";
-import Subscription from "./components/StripeComponents/subscription";
-import Prices from "./components/StripeComponents/prices"
-
-import EmbeddedForm from "./components/StripeComponents/EmbeddedForm";
-import CheckoutForm from "./components/StripeComponents/CheckoutForm";
+// import StripeApp from "./components/stripeComponents/StripeApp";
 
 const router = createBrowserRouter([
     {
@@ -71,30 +66,11 @@ const router = createBrowserRouter([
     {
         path: "/multipayment",
         element: < PaymentMulti />
-    },
-    {
-        path: "/StripeRegister",
-        element: < Register />
-    },
-    {
-        path: "/StripePrices",
-        element: <Prices />
-    },
-    {
-        path: "/stripepayment",
-        element: < Subscription />
-    },
-    {
-        path: "/embeddedform",
-        element: < EmbeddedForm />
-    },
-    {
-        path: "/checkout",
-        element: < CheckoutForm />
-    },
-    {
-
     }
+    // {
+    //     path: "/StripeApp",
+    //     element: <StripeApp />
+    // }
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
