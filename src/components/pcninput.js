@@ -29,7 +29,7 @@ export default function PCNInput() {
 
         try {
             // const {data} = await axios.post('https://emailback2.onrender.com/postrequest', {
-            const {data} = await axios.post('http://127.0.0.1:5000/postrequest', {
+            const {data} = await axios.post('https://carsearchback-v2.onrender.com/postrequest', {
 
                 reg_number,
                 pcn_number
